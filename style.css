@@ -32,6 +32,36 @@ h2 {
     height: fit-content;
 }
 
+#totalStudents {
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #000;
+    font-size: 1.1em;
+    background-color: #fff;
+    height: fit-content;
+}
+
+#examen{
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #000;
+    font-size: 1.1em;
+    background-color: #ffffff;
+    height: fit-content;
+}
+
+#eximidos{
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #000;
+    font-size: 1.1em;
+    background-color: #fff;
+    height: fit-content;
+}
+
 form {
     background-color: #fff;
     padding: 20px;

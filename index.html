@@ -9,7 +9,13 @@
 <body>
   <div class="main-container">
     <h2>Notas Asignatura Front-End</h2>
-    <div id="average">Promedio General del Curso: N/A</div>
+    
+    
+   <h3> <div id="average">Promedio General del Curso: N/A</div>
+    <div id="totalStudents">Total de estudiantes: 0</div>
+    <div id="examen">Estudiantes que deben rendir examen: 0</div>
+    <div id="eximidos">Estudiantes eximidos: 0</div> </h3>
+    
     <form id="studentForm" novalidate>
       <div>
         <label for="name">Nombre:</label>
@@ -27,7 +33,8 @@
         <span class="error" id="errorGrade"></span>
       </div>
       <button type="submit">Guardar</button>
-    </form>
+    </form> 
+    
     <table id="studentTable">
       <thead>
         <tr>

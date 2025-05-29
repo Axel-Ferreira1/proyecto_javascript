@@ -34,18 +34,16 @@ document.getElementById("studentForm").addEventListener("submit", function (e) {
 
     const student={name,lastName,grade};
     
-    if (editingIndex=== -1) {
-        
+    if (editingIndex === -1) {
         students.push(student);
     } else {
-        
-        students[editingIndex]= student;
-        editingIndex= -1; 
-        document.querySelector("button[type='submit']").textContent= "Guardar";
+        students[editingIndex] = student;
+        editingIndex = -1;
+        document.querySelector("button[type='submit']").textContent = "Guardar";
     }
 
     updateTable();
-    calcularPromedio();
+    calcularPromedioYEstadisticas();
     this.reset();
 });
 
@@ -58,7 +56,7 @@ function updateTable(){
         row.innerHTML= `
             <td>${student.name}</td>
             <td>${student.lastName}</td>
-            <td>${student.grade}</td>
+            <td>${student.grade.toFixed(2)}</td>
             <td>
                 <button class="btn-delete">Eliminar</button>
                 <button class="btn-edit">Editar</button>
@@ -80,7 +78,7 @@ function updateTable(){
 function borrarEstudiante(index) {
     students.splice(index, 1);
     updateTable();
-    calcularPromedio();
+    calcularPromedioYEstadisticas();
 }
 
 function editarEstudiante(index) {
@@ -92,16 +90,31 @@ function editarEstudiante(index) {
     document.querySelector("button[type='submit']").textContent= "Guardar";
 }
 
-const promDiv=document.getElementById("average");
+const promDiv = document.getElementById("average");
+const totalDiv = document.getElementById("totalStudents");
+const examenDiv = document.getElementById("examen");
+const eximidosDiv = document.getElementById("eximidos");
 
-function calcularPromedio() {
-    if (students.length=== 0) {
-        promDiv.innerHTML="Promedio General del curso: N/A";
+function calcularPromedioYEstadisticas() {
+    if (students.length === 0) {
+        promDiv.textContent = "Promedio General del curso: N/A";
+        totalDiv.textContent = "Total de estudiantes: 0";
+        examenDiv.textContent = "Estudiantes que deben rendir examen: 0";
+        eximidosDiv.textContent = "Estudiantes eximidos: 0";
         return;
     }
-    const total=students.reduce((acc, student)=>acc+student.grade, 0);
-    const average=total/students.length;
-    promDiv.innerHTML=`Promedio General del curso:${average.toFixed(2)}`;
+
+    const total = students.reduce((acc, student) => acc + student.grade, 0);
+    const average = total / students.length;
+
+    const debenExamen = students.filter(s => s.grade < 5).length;
+    const eximidos = students.filter(s => s.grade >= 5).length;
+
+    promDiv.textContent = `Promedio General del curso: ${average.toFixed(2)}`;
+    totalDiv.textContent = `Total de estudiantes: ${students.length}`;
+    examenDiv.textContent = `Estudiantes que deben rendir examen: ${debenExamen}`;
+    eximidosDiv.textContent = `Estudiantes eximidos: ${eximidos}`;
 }
 
 updateTable();
+calcularPromedioYEstadisticas();
