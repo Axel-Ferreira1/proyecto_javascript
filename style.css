@@ -12,7 +12,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* Contenedor del promedio y el formulario */
+
 .flex-container {
     display: flex;
     justify-content: space-between;
@@ -21,7 +21,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Estilo para el promedio */
+
 #average {
     border: 2px solid #000;
     padding: 10px 20px;
@@ -32,7 +32,6 @@ h2 {
     height: fit-content;
 }
 
-/* Formulario */
 form {
     background-color: #fff;
     padding: 20px;
@@ -73,7 +72,6 @@ button:hover {
     background-color: #333;
 }
 
-/* Tabla */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -91,13 +89,11 @@ th {
     color: white;
 }
 
-/* Errores */
 .error {
     color: red;
     font-size: 0.9em;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .flex-container {
         flex-direction: column;

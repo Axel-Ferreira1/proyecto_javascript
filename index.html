@@ -1,52 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #average{
-            font-weight: bold;
-            color: green;
-            margin-bottom: 20px;
-        }
-    </style>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="main-container">
     <h2>Notas Asignatura Front-End</h2>
-    <div id="average">Promedio General del Curso : N/A</div>
-    <form id="studentForm">
-        <div>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" required>
-        </div>
-        <div>
-            <label for="lastname">Apellido:</label>
-            <input type="text" id="lastname" required>
-        </div>
-        <div>
-            <label for="grade">Nota:</label>
-            <input type="number" id="grade" step="0.1" min="1" max="7">
-        </div>
-        <button type="submit">Guardar</button>
-
+    <div id="average">Promedio General del Curso: N/A</div>
+    <form id="studentForm" novalidate>
+      <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required />
+        <span class="error" id="errorName"></span>
+      </div>
+      <div>
+        <label for="lastname">Apellido:</label>
+        <input type="text" id="lastname" required />
+        <span class="error" id="errorLastName"></span>
+      </div>
+      <div>
+        <label for="grade">Nota:</label>
+        <input type="number" id="grade" step="0.1" min="1" max="7" required />
+        <span class="error" id="errorGrade"></span>
+      </div>
+      <button type="submit">Guardar</button>
     </form>
     <table id="studentTable">
-    <thead>
+      <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Nota</th>
-            <th>Acciones</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Nota</th>
+          <th>Acciones</th>
         </tr>
-    </thead>
-    <tbody>
-        <!--contenido de la tabla-->
-    </tbody>
+      </thead>
+      <tbody>
+      </tbody>
     </table>
-
-    <script src="script.js"></script>
-
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
